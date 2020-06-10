@@ -1,0 +1,38 @@
+<style>
+    .box{
+    width:40%;
+    margin:auto;
+    margin-top:5%;
+
+    }
+    .box h1{
+    text-align:center;
+    }
+
+    form{
+        text-align: center;
+    background: aquamarine;
+    margin: 85px;
+    margin-top: -10px;
+    padding: 40px;}
+
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div class="box">
+
+    <form method="post">
+        {% if status%}
+           <div class="alert alert-success">
+              <strong>{{status}}</strong>
+            </div>
+        {%endif%}
+        {% csrf_token %}
+        <h1>Welocme to Django Mail..</h1>
+        <p><input type="text" placeholder="Enter Email" name="email"></p>
+        <p><textarea name="mess" placeholder="Enter Message Here"></textarea></p>
+        <button type="submit" class="btn btn-primary">Send mail</button>
+    </form>
+
+
+</div>
